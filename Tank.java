@@ -64,8 +64,7 @@ public class Tank {
 			}
 			return;
 		}
-		//if (good)
-			//new DrawBloodbBar().draw(g); 
+
 		switch (Kdirection) {
 							
 		case D:

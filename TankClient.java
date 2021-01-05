@@ -257,7 +257,7 @@ public class TankClient extends Frame implements ActionListener {
 		jmi8 = new MenuItem("Level3");
 		jmi9 = new MenuItem("Level4");
 		jmi10=new MenuItem("Add Player 2");
-		jmi11= new MenuItem("Join other's game");
+		jmi11= new MenuItem("");
 		jmi1.setFont(new Font("Times New Roman", Font.BOLD, 15));
 		jmi2.setFont(new Font("Times New Roman", Font.BOLD, 15));
 		jmi3.setFont(new Font("Times New Roman", Font.BOLD, 15));
@@ -370,7 +370,7 @@ public class TankClient extends Frame implements ActionListener {
 		this.setSize(Fram_width, Fram_length);
 		this.setLocation(280, 50); 
 		this
-				.setTitle("Battle City    Final Project for CPE 640");
+				.setTitle("Battle City Final Project OOP");
 
 		this.addWindowListener(new WindowAdapter() { 
 					public void windowClosing(WindowEvent e) {
@@ -391,7 +391,7 @@ public class TankClient extends Frame implements ActionListener {
 
 	private class PaintThread implements Runnable {
 		public void run() {
-			// TODO Auto-generated method stub
+
 			while (printable) {
 				repaint();
 				try {
@@ -437,13 +437,7 @@ public class TankClient extends Frame implements ActionListener {
 
 		} else if (e.getActionCommand().endsWith("Stop")) {
 			printable = false;
-			// try {
-			// Thread.sleep(10000);
-			//
-			// } catch (InterruptedException e1) {
-			// // TODO Auto-generated catch block
-			// e1.printStackTrace();
-			// }
+
 		} else if (e.getActionCommand().equals("Continue")) {
 
 			if (!printable) {
@@ -483,7 +477,7 @@ public class TankClient extends Frame implements ActionListener {
 		}
 		else if (e.getActionCommand().equals("help")) {
 			printable = false;
-			JOptionPane.showMessageDialog(null, "Use WSAD to control Player1's direction, use F to fire and restart with pressing R\nUse diection key to Control Player2, use slash to fire",
+			JOptionPane.showMessageDialog(null, "Use WSAD to control Player1's direction, use F to fire and restart with pressing R\nUse diection key to Control Player2, use / to fire",
 					"Help", JOptionPane.INFORMATION_MESSAGE);
 			this.setVisible(true);
 			printable = true;
@@ -521,12 +515,6 @@ public class TankClient extends Frame implements ActionListener {
 			Bullets.speedY = 18;
 			this.dispose();
 			new TankClient();
-		} else if (e.getActionCommand().equals("Join")){
-			printable = false;
-			String s=JOptionPane.showInputDialog("Please input URL:");
-			System.out.println(s);
-			printable = true;
-			new Thread(new PaintThread()).start();
 		}
 		
 	}
